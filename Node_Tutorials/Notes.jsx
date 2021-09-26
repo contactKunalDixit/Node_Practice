@@ -1,7 +1,8 @@
 /*
 
 Q: What is a NodeJs?
-A:  It is an environment to run JS outside of Browser.
+A:  It is an environment which runs run JS outside of Browser.
+    It is a runtime environment which uses JavaScript language to execute functions in terminal, i.e. outside of browser environment.
     Helps at backend to provide server services and database connecting services and more to frontEnd of applications
     Built on Chrome's V8 JS engine
 
