@@ -9,7 +9,7 @@
 ! As of this moment in the learning, treat them as merely different methods
 */
 
-// For a start, We are focussing on just 4 methods and that too in the sync flavour:
+// For a start, We are focussing on just these methods and that too in the sync flavour:
 
 const fs = require('fs');
 /* Alternatively, You could use destructuring and just specify the relevant methods and props you require from the 'fs' module. In this case we obviously are storing the module in the object 'fs'  */
@@ -17,9 +17,17 @@ console.log(fs);
 
 // Method READS the content of the file synchronously. The first arg is the address of vthe file. The second arg is majorly always the 'utf-8' character encoding.
 
-const first = fs.readFileSync('./content/first.txt', 'utf-8');
-const second = fs.readFileSync('./content/second.txt', 'utf-8');
+console.log('1 - Process starts');
 
+const first = fs.readFileSync('./content/first.txt', 'utf-8');
+console.log(
+	`2 - after reading the content from 1st file, store the result in variable "first"`
+);
+
+const second = fs.readFileSync('./content/second.txt', 'utf-8');
+console.log(
+	`3 - after reading the content from 2nd file, store the result in variable "second"`
+);
 console.log(first, '; ', second);
 
 // Method to WRITE or CREATE a new file and write in it. The 1st arg is the path of the existing file or if the file wont be found, then it creates a new file like in this case. The second arg is the msg itself that need to go inside that file
@@ -42,3 +50,6 @@ fs.writeFileSync(
 	'; This statement has been appended later ;',
 	{ flag: 'a' }
 );
+
+console.log(`4 - Writes the content to the said file `);
+console.log(`5 - The process CONCLUDES`);
