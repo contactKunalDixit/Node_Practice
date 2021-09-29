@@ -1,10 +1,10 @@
 const http = require('http');
 // console.log(http);
 
-/* In the below statement, we are using method "createServer" to initiate a server request, and then saving it in variable "server". The 'createServer' would take a callback function which'll always 2 parameters which'll always be objects, mostly named as req for 'request' and res for "response" */
-//? The first parameter 'req' (which'll be an object in itself) always represents the INCOMING request. This object 'req' would have captured the info like the method used by the user, and other imp info that would be stored in this object
+/* In the below statement, we are using method "createServer" to initiate a server request, and then saving it in variable "server". The 'createServer' would take a callback function which'll always 2 parameters which'll always be objects themselves, mostly named as req for 'request' and res for "response" */
+//? The first parameter 'req' (which'll be an object in itself) always represents the INCOMING request. This object 'req' would have captured the info like the method used by the user alongwith other imp info
 
-//? The second parameter (which will also be an object) would be the response we'll send through the server
+//? The second parameter (which will also be an object) would be the response we'll send through the server. Both will have thier own respective objects, methods and properties
 
 const server = http.createServer((req, res) => {
 	/*  
@@ -33,7 +33,7 @@ server.listen(5000, () => {
 });
 
 /*
-1.  res.write(): to write a 'response' whill be send to the user 
+1.  res.write(): to write a 'response' which'll be send to the user 
 
 2.  res.end(): To conslude the request after the response has been sent to the user. This signals that there would not be any more data to be written 
 

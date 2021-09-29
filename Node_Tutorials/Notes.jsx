@@ -217,3 +217,28 @@ If the user types anything else, then a page not found response with an anchor t
 
 ? For MORE DETAILS, PLEASE REFER TO 12-http.JS
 */
+
+/*
+********* Info on NODE **********
+
+!Q: What is NPM?
+
+NPM is a node packet manager which is a huge repo of previously written codes by other devs, which we can reuse rather than scratching projects from scratch.
+You can write your own code too and then share i with other devs.
+
+Package  = modules = dependencies..all mean the same thing: previous written code by others
+
+?? NOTE: There is no quality control.  A Good package generally would have a high weekly download count. Another thing is to look out for bugs and comments left by others. Sometimes the working solution is provided seperately and a link is mentioned in the NPM repo.
+
+npm - global command:  comes with Node.
+npm --version: shows version currently installed
+
+LOCAL DEPENDENCIES : use it in this particular project ONLY and not globally.
+npm i <package name>
+
+GLOBAL DEPENDENCY : use it in any project since it has been installed globally:
+npm install -g <package name>
+sudo npm install -install -g <package Name> (linux or Mac) 
+
+GENERALLY, WE PREFER LOCAL DEPENDENCIES RATHER THAN GLOBAL DEPENDENCIES
+*/

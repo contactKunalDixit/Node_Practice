@@ -7,7 +7,7 @@ console.log(path.sep);
 
 // path.join() : helps join the different paths into one. Dev can specify the exact path he needs, and path.join joins them together with a designated 'separator'.
 // It simply returns a normalized version
-// Adding additional '///' seperator would not make any deifference and it'll still return it normalized
+// Adding additional '///' seperator would not make any deifference and it'll still return it "NORMALIZED"
 
 const filePath = path.join('content', 'subfolder', 'text.txt');
 console.log(filePath);
