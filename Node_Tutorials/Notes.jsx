@@ -222,6 +222,16 @@ If the user types anything else, then a page not found response with an anchor t
 
 Q: NPM :
 
+NPM is a node packet manager which is a huge repo of previously written codes by other devs, which we can reuse rather than scratching projects from scratch.
+You can write your own code too and then share i with other devs.
+
+Package  = modules = dependencies..all mean the same thing: previous written code by others
+
+?? NOTE: There is no quality control.  A Good package generally would have a high weekly download count. Another thing is to look out for bugs and comments left by others. Sometimes the working solution is provided seperately and a link is mentioned in the NPM repo.
+
+
+
+
     Node packet manager: 
 
         Packages aka dependencies aka modules can be installed as GLOBALS or for LOCALs         i.e. for specific projects
@@ -285,5 +295,13 @@ Upcoming TOPICS:
 **  EVENT LOOP; ASYNC PATTERNS; EVENTS EMITTER; STREAMS
 **  MAIN CONCEPTS
 **  PRE-BUILT CODE
+
+*/
+
+/*
+? Event loops in Node:
+Q: What is Event Loop?
+        The Event loop is what allows Node.js to perform - Non blocking I/O (input/output) operations - despite the fact that JavaScript is single threaded - By OFFLOADING operations to the system kernel whenever possible.
+        Since most modern kernels are multi threaded, they can handle multiple operations executing in the background. When one of these operations completes, the kernel tells Node.js so that the appropriate callback may be added to the 'poll' queue to eventually be executed. 
 
 */
