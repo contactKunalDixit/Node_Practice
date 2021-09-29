@@ -27,7 +27,7 @@ const server = http.createServer((req, res) => {
 	}
 });
 // console.log(server);
-// server.listen(): helps you set the listeining port at 5000 or any other number
+// server.listen(): helps you set the listening port at 5000 or any other number. The port listens to the user incoming requests.
 server.listen(5000, () => {
 	console.log('The Server is on and Running');
 });

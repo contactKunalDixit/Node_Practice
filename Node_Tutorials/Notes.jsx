@@ -219,26 +219,71 @@ If the user types anything else, then a page not found response with an anchor t
 */
 
 /*
-********* Info on NODE **********
 
-!Q: What is NPM?
+Q: NPM :
 
-NPM is a node packet manager which is a huge repo of previously written codes by other devs, which we can reuse rather than scratching projects from scratch.
-You can write your own code too and then share i with other devs.
+    Node packet manager: 
 
-Package  = modules = dependencies..all mean the same thing: previous written code by others
+        Packages aka dependencies aka modules can be installed as GLOBALS or for LOCALs         i.e. for specific projects
 
-?? NOTE: There is no quality control.  A Good package generally would have a high weekly download count. Another thing is to look out for bugs and comments left by others. Sometimes the working solution is provided seperately and a link is mentioned in the NPM repo.
+        GLOBALs:    npm install -g <package Manager>
+        LOCALs:     sudo npm install <package Manager> (sudo especially in case of Macs)
 
-npm - global command:  comes with Node.
-npm --version: shows version currently installed
+        NOTE: Local DEPENDENCY is what is most commonly used and is preffered option        most of the times over Global installation
 
-LOCAL DEPENDENCIES : use it in this particular project ONLY and not globally.
-npm i <package name>
+? Q: What is package.json file?
 
-GLOBAL DEPENDENCY : use it in any project since it has been installed globally:
-npm install -g <package name>
-sudo npm install -install -g <package Name> (linux or Mac) 
+        A: Its a manifest file ** (stores important info about project/package aka dependencies). This file stores the dependencies info in the jSON format and its execution creates the node_modules folder which actually consists the dependencies aka packages aka modules folders.
 
-GENERALLY, WE PREFER LOCAL DEPENDENCIES RATHER THAN GLOBAL DEPENDENCIES
+There are 2 ways in which package.json can be created:
+Manual approach: manually create package.json in the root, then manually create properties etc
+
+Quick approach: npm init (step by step, press enter to skip)
+Quickes approach: npm init -y (everything default)
+
+        IMPORTANT NOTE:
+
+        Do not upload node_modules as they are usually heavy files
+        
+        Instead :
+        CREATE a '.gitignore' file and write "/node_module" in it and it'll be ignored by git while everything else gets uploaded; Then once its there on github, whil;e cloning the same code, one can run npm install to download all dependencies locally on the respective machine/s
+
+? THIS IS HOW WE SHARE CODES WHILE AVOIDING HEAVY WEIGHTED UPLOADS AND DOWNLOADS
+
+        WHile downloading Dependencies, they can be downloaded either as simply locally i.e. npm -i nodemon 
+        or
+        globally i.e. npm i -g nodemon
+        or 
+        just locally but just for the dev (development) environment: i.e. 
+        npm i nodemon -D
+        what other packages can/ should be added to Dev dependencies: testing packages like: Linting, formatting etc. We use Dev dependencies while creating the app but while in production, we only would like to use the dependencies which are actually required to be used in app functioning
+
+
+        package.json:
+
+        scripts section: You can setup your own scripts:
+        "start":"node app.js"     npm start would execute node app.js
+        "dev":"nodemon app.js"    need to do npm run dev to run "nodemon app.js"
+
+?? Q: How to uninstall a package?
+A:  npm uninstall <packageName>
+
+
+Q:  what is the use of package-lock.json?
+A:  package-lock.json constitutes of project dependencies and the dependencies that these module are dependent upon. e.g. bootstrap has a further dependency on jQuery. This package-lock.json would include the version info for all the direct dependencies and the children dependencies.
+
+??Q:  How to interpret the version numbers in general: e.g. "4.17.20"
+
+A: version ref number is a kind of contract between the devs and the users of those versions.
+4 stands for a major change
+17: stands for a minor change and promises backward compatability i.e. say if it changes from 17 to 18, then no opne should expect any breaking changes 
+20: captures the precise patch that has been changed 
+
+
+Upcoming TOPICS:
+
+**  EVENT LOOP; ASYNC PATTERNS; EVENTS EMITTER; STREAMS
+**  MAIN CONCEPTS
+**  PRE-BUILT CODE
+
 */
