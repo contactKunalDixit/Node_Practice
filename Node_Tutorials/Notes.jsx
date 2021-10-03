@@ -304,4 +304,43 @@ Q: What is Event Loop?
         The Event loop is what allows Node.js to perform - Non blocking I/O (input/output) operations - despite the fact that JavaScript is single threaded - By OFFLOADING operations to the system kernel whenever possible.
         Since most modern kernels are multi threaded, they can handle multiple operations executing in the background. When one of these operations completes, the kernel tells Node.js so that the appropriate callback may be added to the 'poll' queue to eventually be executed. 
 
+
+        VERY IMPORTANT LINK FOR UNDERSTANDING:
+
+        https://nodejs.dev/learn/the-nodejs-event-loop
+
+todo:   The MESSAGE QUEUE   Vs the JOB QUEUE:
+
+?? The MESSAGE QUEUE
+
+When setTimeOut() is called, the 'Browser' or 'Node.js' starts the timer. Once the timer expires, the callback function is put back in the "message queue"
+        
+The Message queue is also where user-initiated events like click or keyboard events, or fetch responses are queued before your code has the ooportubity to react to them. Or also DOM events like onLoad.
+
+Todo: 'The "event loop" gives prioority to the call stack, and it first processes everything it finds in the call stack, and once there's nothing in there, it goes to pick things in the message queue'
+
+Thus, through this nature of event loops, we dont need to wait for functions like setTimeOut(), fetch or ither things to do thier own work, because they are provided by the broser and they live on thier own threads. 
+For e.g., if you set setTimeOut() tiemout period for 2 saeconds, You dont have to wait 2 seconds = the wait happens elsewhere.
+
+
+
+?? ES6 JOB QUEUE:
+
+ES6 introduced the concept pof the JOB QUEUE, which is used by PROMISES. Its a way to execute the result of an ASYNC function as soon as possible, rather thn being put at the end of the call stack.
+
+PROMISES that resolve before the current function ends will be executed right after the current function. It will not be waiting as the last item on the call stack (like the message queue does)
+
+An easy analogy:
+
+Roller coaster ride at an amusement park:
+
+The 'MESSAGE QUEUE' puts you at the back of the queue, behind all the other people, where you'll have to wait for your turn, while the 'JOB QUEUE' is the fast pass ticket that lets you take another ride after you've finished the previous one.
+
+
+todo: THUS IN NODE, ASYNCHRONOUS FUNCTIONS WILL BE OFFLOADED FROM THE CALL STACK AND WOULD BE INVOKED ELSEWHERE. IT GETS ADDED BACK TO THE MESSAGE QUEUE (or 'JOB QUEUE' in case of 'Promises') ONLY AFTER THE RESPONSE HAS BEEN RECIEVED ( WETHER ERR OR RESOLUTION). This is the basec nature of NODE's Event loop
+
+
+
+
+
 */
